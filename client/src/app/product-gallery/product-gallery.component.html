@@ -1,0 +1,32 @@
+<div class="content my-5">
+	<div class="container">
+		@if (products.length > 0) {
+		<ul class="product-list row">
+			@for (product of products; track product.id) {
+			<li class="product-item col-sm-6 col-lg-3">
+				<app-product [product]="product"></app-product>
+			</li>
+			}
+		</ul>
+		}
+
+		<div>
+			<ul class="pagination pagination-lg">
+				<li class="page-item" [ngClass]="{ 'disabled': pageNumber === 1 }" (click)="changePage(pageNumber - 1)">
+					<a class="page-link" href="#">&laquo;</a>
+				</li>
+
+				@for (page of totalPages; track $index) {
+				<li class="page-item" [ngClass]="{ 'active': pageNumber === page }">
+					<a class="page-link" href="#" (click)="changePage(page)">{{page}}</a>
+				</li>
+				}
+
+				<li class="page-item" [ngClass]="{ 'disabled': pageNumber === totalPages.length }"
+					(click)="changePage(pageNumber + 1)">
+					<a class="page-link" href="#">&raquo;</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

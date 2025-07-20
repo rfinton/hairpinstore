@@ -1,0 +1,25 @@
+.input-control {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.input-control > div {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	aspect-ratio: 1;
+	width: auto;;
+	height: 38px;
+	line-height: 1;
+	background-color: #f0f0f0;
+	cursor: pointer;
+	user-select: none;
+}
+
+.input-control > input {
+	max-width: 80px;
+	text-align: center;
+}

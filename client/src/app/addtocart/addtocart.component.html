@@ -1,0 +1,10 @@
+@if (product) {
+<div>
+	<div [ngClass]="['input-control', 'justify-content-' + align]">
+		<div (click)="incrementQuantity()"><span class="h3 mb-1">+</span></div>
+		<input type="text" class="form-control" value="{{quantity}}">
+		<div (click)="decrementQuantity()"><span class="h3 mb-1">-</span></div>
+	</div>
+	<button type="button" class="btn btn-primary mt-3" (click)="addToCart(product)">Add To Cart</button>
+</div>
+}

@@ -1,0 +1,71 @@
+form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	background-color: rgba(192, 192, 192, 0.5);
+	border: none;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+form fieldset {
+	background-color: rgba(192, 192, 192, 0.5);
+	border: none;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+form legend {
+	font-size: 1.5em;
+	color: papayawhip;
+}
+
+form label {
+	font-weight: bold;
+}
+
+form input,
+form select {
+	border-radius: 5px;
+}
+
+.change-quantity {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.change-quantity span {
+	background: #fff;
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-weight: bold;
+}
+
+.payment-element {
+	margin: 30px 0;
+	padding: 30px;
+	border-radius: 6px;
+	background: #e2e2e2;
+}
+
+@media (max-width: 768px) {
+	form {
+		grid-template-columns: 1fr;
+	}
+
+	.cart-items {
+		display: grid !important;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.payment-element {
+		padding: 0;
+		margin: 1rem 0;
+		background-color: transparent;
+	}
+
+	#shipping-info .row {
+		display: block;
+	}
+}

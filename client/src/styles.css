@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+	--bs-btn-border-radius: 0.25rem;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	background:
+		linear-gradient(red, transparent),
+		linear-gradient(to top left, lime, transparent),
+		linear-gradient(to top right, blue, transparent);
+	background-blend-mode: overlay, overlay, overlay;
+	background-size: cover, cover, cover;
+	background-position: center, center, center;
+	background-attachment: fixed;
+}
+
+.btn {
+	border-radius: 0px;
+}

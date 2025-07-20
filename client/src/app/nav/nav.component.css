@@ -1,0 +1,24 @@
+.fa.fa-shopping-cart {
+	color: #fff;
+	font-size: 36px;
+	margin-left: 1rem;
+}
+
+.dropdown-toggle::after {
+	font-family: 'FontAwesome';
+	content: "\f2bd";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 2rem;
+	text-decoration: inherit;
+	/* optional styling */
+	padding-right: 0.5rem;
+	color: gold;
+	border: none;
+}
+
+@media screen and (max-width: 576px) {
+	.dropdown-toggle::after {
+		display: none;
+	}
+}

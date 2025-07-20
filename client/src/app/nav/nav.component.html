@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg bg-primary fixed-top" data-bs-theme="dark">
+	
+	<div class="container">
+		
+		<a class="navbar-brand" href="#" routerLink="/">The Hairpin Store</a>
+		
+		<div>
+			<a href="#" routerLink="/checkout">
+				<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			</a>
+			<span class="badge text-bg-secondary">{{ cartItemCount }}</span>
+		</div>
+		
+		<button 
+			class="navbar-toggler" 
+			type="button" 
+			data-bs-toggle="collapse" 
+			data-bs-target="#navbarColor01"
+			aria-controls="navbarColor01" 
+			aria-expanded="false" 
+			aria-label="Toggle navigation">
+			<!-- <span class="navbar-toggler-icon"></span> -->
+			<i class="fa fa-user-circle display-4" aria-hidden="true"></i>
+		</button>
+		
+		<div class="collapse navbar-collapse justify-content-end" id="navbarColor01">
+		
+			@if (!accountService.currentUser()) {
+				<form #loginForm="ngForm" (ngSubmit)="login()" class="d-flex flex-column flex-sm-row gap-2" autocomplete="off">
+					<input 
+						name="email" 
+						[(ngModel)]="model.email" 
+						class="form-control me-sm-2" 
+						type="text"
+						placeholder="Username"
+					>
+					
+					<input 
+						name="password" 
+						[(ngModel)]="model.password" 
+						class="form-control me-sm-2" 
+						type="password"
+						placeholder="Password"
+					>
+					
+					<button class="btn btn-secondary my-2 my-sm-0" type="submit">Login</button>
+				</form>
+			}
+
+			@if (accountService.currentUser()) {
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle text-end d-flex align-items-center p-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+							aria-expanded="false">{{accountService.currentUser()?.username}}</a>
+						<div class="dropdown-menu dropdown-menu-end" [ngClass]="isMobile ? 'show' : ''">
+							<a class="dropdown-item text-end text-sm-start" href="#">Edit Profile</a>
+							<a class="dropdown-item text-end text-sm-start" href="#" (click)="logout()">Logout</a>
+						</div>
+					</li>
+				</ul>
+			}
+		</div>
+	</div>
+</nav>

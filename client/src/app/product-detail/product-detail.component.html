@@ -1,0 +1,14 @@
+@if (product) {
+<div class="d-flex mt-5">
+	<img src="assets/images/products/bp-black-50-main.png" class="img-fluid flex mx-5" alt="image" style="height: 500px;" />
+	<div class="flex">
+		<h2 class="text-white">{{ product.name }}</h2>
+		<p class="text-white">{{ product.description }}</p>
+		<p class="text-white display-5 font-weight-bold">{{ product.price | currency }}</p>
+		<p class="text-white">{{ product.stockQuantity }}</p>
+		<p class="text-white">{{ product.material }}</p>
+		<p class="text-white">{{ product.color }}</p>
+		<app-addtocart [product]="product" [align]="'left'"></app-addtocart>
+	</div>
+</div>
+}
