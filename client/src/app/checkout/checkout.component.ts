@@ -5,6 +5,7 @@ import { CartItem } from '../_models/cart-item';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { StripeService } from '../_services/stripe.service';
 import { Stripe, StripeElements, StripePaymentElement } from '@stripe/stripe-js';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-checkout',
@@ -18,6 +19,7 @@ export class CheckoutComponent implements OnInit, AfterViewInit {
 
   protected cartService = inject(CartService);
   private stripeService = inject(StripeService);
+  private baseUrl = environment.baseUrl;
 
   private stripe: Stripe | null = null;
   private elements: StripeElements | null = null;
@@ -97,7 +99,7 @@ export class CheckoutComponent implements OnInit, AfterViewInit {
         elements: this.elements!,
         clientSecret,
         confirmParams: {
-          return_url: "https://localhost:4200"
+          return_url: environment.baseUrl
         }
       });
 

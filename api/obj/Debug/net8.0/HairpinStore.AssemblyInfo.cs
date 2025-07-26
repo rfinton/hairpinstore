@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HairpinStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4a347756970dfb556f7c76c20c6f2552834eb85")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d4ed944ef0cdae07e6ba61168be7b85ac216313")]
 [assembly: System.Reflection.AssemblyProductAttribute("HairpinStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HairpinStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,12 +3,14 @@ import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 import { CartItem } from '../_models/cart-item';
 import { HttpClient } from '@angular/common/http';
 import { CartDto } from '../_models/cart-dto';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   private http = inject(HttpClient);
+  private baseUrl = environment.apiUrl;
 
   public cartItems: CartItem[] = [];
   public cartItemsSubject = new BehaviorSubject<CartItem[]>(this.cartItems);
@@ -25,7 +27,7 @@ export class CartService {
   }
 
   getCartItems(): Observable<CartDto> {
-    return this.http.get<CartDto>('https://localhost:7299/api/cart');
+    return this.http.get<CartDto>(`${this.baseUrl}/cart`);
   }
 
   addToCart(item: CartItem): Observable<CartDto> {
@@ -42,7 +44,7 @@ export class CartService {
       Quantity: item.quantity
     };
 
-    return this.http.post<CartDto>('https://localhost:7299/api/cart/add', itemDto);
+    return this.http.post<CartDto>(`${this.baseUrl}/cart/add`, itemDto);
   }
 
   removeFromCart(item: CartItem) {
@@ -51,13 +53,13 @@ export class CartService {
         ProductId: item.productId 
       } 
     };
-    return this.http.delete('https://localhost:7299/api/cart/remove', dto);
+    return this.http.delete(`${this.baseUrl}/cart/remove`, dto);
   }
 
   clearCart() {
     // this.cartItems = [];
     // this.cartItemsSubject.next(this.cartItems);
-    this.http.delete('https://localhost:7299/api/cart/clear').subscribe({
+    this.http.delete(`${this.baseUrl}/cart/clear`).subscribe({
       next: _ => this.cartItemsSubject.next([]),
       error: error => console.log(error)
     });

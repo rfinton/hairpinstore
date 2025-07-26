@@ -147,3 +147,4 @@
 /Users/zato/DotnetPortfolio/HairpinStore/api/bin/Debug/net8.0/Stripe.net.dll
 /Users/zato/DotnetPortfolio/HairpinStore/api/bin/Debug/net8.0/System.Configuration.ConfigurationManager.dll
 /Users/zato/DotnetPortfolio/HairpinStore/api/bin/Debug/net8.0/System.Security.Cryptography.ProtectedData.dll
+/Users/zato/DotnetPortfolio/HairpinStore/api/obj/Debug/net8.0/HairpinStore.sourcelink.json
